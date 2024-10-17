@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+/* Font Faces  */
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url('./Assets/Fonts/AvenirLTStd/Avenir\ LT\ Std\ 85\ Heavy.otf') format('opentype');
+  font-weight: 900; 
+  font-style: normal;
+}
