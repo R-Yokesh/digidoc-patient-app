@@ -8,7 +8,7 @@ const Language = () => {
 
   const handleLanguageSelect = (language) => {
     setSelectedLang(language);
-    navigate('/sign');
+    navigate('/signin');
   };
 
   return (
