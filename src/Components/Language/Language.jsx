@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import './Language.css';
-import DigiDocImage from '../../Assets/Images/DigiDoc Head.png';
-import SplashImage from '../../Assets/Images/Online Doctor-amico.png';
+import { useNavigate } from 'react-router-dom'; 
+import '../../Assets/Css/Language.css';
 
 const Language = () => {
   const [selectedLang, setSelectedLang] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleLanguageSelect = (language) => {
     setSelectedLang(language);
+    navigate('/sign');
   };
 
   return (
-    <div className="language-container">
-      <header className="logo-section">
-        <img src={DigiDocImage} alt="DigiDoc" className="logo" />
-      </header>
-      <div className="illustration-section">
-        <img src={SplashImage} alt="Doctor Illustration" className="illustration" />
-      </div>
       <div className="language-selector">
-      <div className="divider"></div> 
+        <div className="divider"></div>
         <h2>Choose Your Language</h2>
         <div className="button-group">
           <button
@@ -36,7 +30,6 @@ const Language = () => {
           </button>
         </div>
       </div>
-    </div>
   );
 };
 
