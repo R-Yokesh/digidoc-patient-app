@@ -1,14 +1,24 @@
+import React, { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';  // No need to import Router here
+import RoutesData from './Routes/Routes';  
 import './App.css';
-// import LangSignView from './Views/LangSignView';
-import SigninView from './Views/SigninView';
+import ScrollToTop from './Components/ScrollTop/ScrollTop';  
 
 function App() {
   return (
-    <div>
-    {/* <LangSignView/> */}
-    <SigninView />
-  
-
+    <div className="App">
+      <Suspense fallback={<div>Loading...</div>}> 
+        <ScrollToTop />
+        <Routes>
+          {RoutesData.map((data, i) => (
+            <Route
+              key={i}
+              path={data.path}
+              element={<data.element />}  
+            />
+          ))}
+        </Routes>
+      </Suspense>
     </div>
   );
 }
