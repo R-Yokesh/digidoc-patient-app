@@ -1,10 +1,14 @@
 import './App.css';
-import LangSignView from './Views/LangSignView';
+// import LangSignView from './Views/LangSignView';
+import SigninView from './Views/SigninView';
 
 function App() {
   return (
     <div>
-    <LangSignView/>
+    {/* <LangSignView/> */}
+    <SigninView />
+  
+
     </div>
   );
 }
