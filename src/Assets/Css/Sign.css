@@ -1,0 +1,28 @@
+
+
+.mobile-input {
+  width: 90%;
+  padding: 10px 0;
+  margin: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  font-family: "Avenir LT STD", sans-serif;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #fbb03b;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: "Avenir LT STD", sans-serif;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #e69b32; /* Slightly darker on hover */
+}
