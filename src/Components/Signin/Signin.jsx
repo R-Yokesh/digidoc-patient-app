@@ -17,12 +17,11 @@ const Signin = () => {
         <form className="sign-in-form">
         <div className="divider"></div>
           <h2>Sign in/Sign up</h2>
-          <label htmlFor="mobile-number">Enter mobile number</label>
           <input
-            type="text"
-            id="mobile-number"
-            required
-          />
+          type="text"
+          placeholder="Enter mobile number"
+          className="mobile-input"
+        />
           <button type="submit">Continue</button>
         </form>
       </div>

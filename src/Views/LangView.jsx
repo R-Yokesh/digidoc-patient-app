@@ -4,7 +4,8 @@ import Language from '../Components/Language/Language'
 
 const LangView = () => {
   return (
-    <div className='app-container'>
+    // <div className='app-container'>
+    <div>
       <Language />
     </div>
   )

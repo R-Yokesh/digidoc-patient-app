@@ -6,7 +6,7 @@ import ConsultImage from '../../Assets/Images/consult.png'
 
 const FirstWelcome = () => {
   return (
-    <div className="app-container">
+
     <div className="first-welcome-container">
       <div className="clogo-section">
         <img
@@ -34,10 +34,9 @@ const FirstWelcome = () => {
       </div>
       
       <div className="button-group">
-        <button className="btn buy-later-btn">Yet To Buy</button>
-        <button className="btn upload-btn">Upload</button>
+        <button className="wbtn buy-later-btn">Yet To Buy</button>
+        <button className="wbtn upload-btn">Upload</button>
       </div>
-    </div>
     </div>
   );
 };

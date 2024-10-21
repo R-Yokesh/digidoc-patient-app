@@ -36,12 +36,13 @@
   max-width: 400px;
   text-align: center;
   background-color: white;
-  padding: 20px 16px 40px 16px; /* Increased bottom padding for more white space */
+  padding: 16px 16px 40px 16px; /* Increased bottom padding for more white space */
   border-radius: 35px 35px 0 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   margin-top: 20px;
   box-sizing: border-box;
+  height: 41vh;
 }
 
 .sign-in-form h2 {
@@ -55,6 +56,21 @@
   font-size: 14px;
   color: black;
   margin-bottom: 10px;
+}
+.mobile-input {
+  width: 90%;
+  padding: 10px 0;
+  margin: 10px 0;
+  font-size: 16px;
+  text-align: center; 
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  font-family: "Avenir LT STD", sans-serif;
+}
+.mobile-input::placeholder {
+  text-align: center; /* This will center the placeholder text */
+  color: black; /* Optional: Change the placeholder color */
 }
 
 .sign-in-form input {
