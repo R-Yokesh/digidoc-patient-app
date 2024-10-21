@@ -1,0 +1,178 @@
+.first-welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.clogo-section {
+  margin-top: 10px;
+}
+
+.logo-image {
+  width: 100%;
+}
+
+.welcome-text {
+  padding-top: 10%;
+}
+
+.welcome-text h4 {
+  color: #FBB03B;
+  font-family: 'Avenir LT Std', sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.welcome-text p {
+  font-family: 'Avenir LT Std', sans-serif;
+  font-size: 20px;
+  color: #060200;
+}
+
+.icon-section {
+  margin-top: 20px;
+}
+
+.consultation-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.instructions-text p {
+  font-family: 'Avenir LT Std', sans-serif;
+  font-size: 16px;
+  color: #060200;
+  margin-top: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  width: 154px;
+  height: 50px;
+  padding: 10px 20px;
+  font-family: 'Avenir LT Std', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-later-btn {
+  border: 1px solid #333;
+  background-color: #fff;
+  color: #333;
+}
+
+.upload-btn {
+  background-color: #ff9900;
+  color: white;
+  border: none;
+}
+
+.buy-later-btn:hover {
+  background-color: #f3f3f3;
+}
+
+.upload-btn:hover {
+  background-color: #e68a00;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) { /* Tablet */
+  .welcome-text h4 {
+    font-size: 22px;
+  }
+
+  .welcome-text p {
+    font-size: 18px;
+  }
+
+  .consultation-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .btn {
+    width: 140px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile L */
+  .welcome-text h4 {
+    font-size: 20px;
+  }
+
+  .welcome-text p {
+    font-size: 16px;
+  }
+
+  .consultation-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile M */
+  .welcome-text h4 {
+    font-size: 18px;
+  }
+
+  .welcome-text p {
+    font-size: 14px;
+  }
+
+  .consultation-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn {
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  
+  /* Mobile S */
+  .app-container {
+    width: unset !important;
+  }
+  .welcome-text h4 {
+    font-size: 16px;
+  }
+
+  .welcome-text p {
+    font-size: 16px;
+  }
+
+  .consultation-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

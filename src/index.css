@@ -5,6 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+
+h1, h2, h3, h4 {
+  font-family: 'Avenir LT Std', sans-serif;
+  font-weight: 900; /* Heavy */
+}
+
+p, body {
+  font-family: 'Avenir LT Std', sans-serif;
+  font-weight: 400; /* Book */
 }
 
 code {
@@ -21,3 +37,20 @@ code {
   font-weight: 900; 
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url('./Assets/Fonts/AvenirLTStd/Avenir\ LT\ Std\ 45\ Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.app-container {
+  width: 375px;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+

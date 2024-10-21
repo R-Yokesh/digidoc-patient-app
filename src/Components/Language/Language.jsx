@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../../Assets/Css/Language.css';
+import DigiDocImage from '../../Assets/Images/DigiDoc Head.png';
+import SplashImage from '../../Assets/Images/Online Doctor-amico.png';
 
 const Language = () => {
   const [selectedLang, setSelectedLang] = useState(null);
@@ -12,6 +14,13 @@ const Language = () => {
   };
 
   return (
+    <div className="language-container">
+      <header className="logo-section">
+        <img src={DigiDocImage} alt="DigiDoc" className="logo" />
+      </header>
+      <div className="illustration-section">
+        <img src={SplashImage} alt="Doctor Illustration" className="illustration" />
+      </div>
       <div className="language-selector">
         <div className="divider"></div>
         <h2>Choose Your Language</h2>
@@ -28,6 +37,7 @@ const Language = () => {
           >
             தமிழ்
           </button>
+        </div>
         </div>
       </div>
   );

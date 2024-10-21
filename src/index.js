@@ -8,10 +8,11 @@ import { BrowserRouter } from 'react-router-dom';  // Import BrowserRouter
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>  {/* Wrap App with BrowserRouter */}
+    <BrowserRouter basename="/">  
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
