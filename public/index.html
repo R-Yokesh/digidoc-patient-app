@@ -25,6 +25,30 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Digi-Doc-PatientApp</title>
+    <style>
+
+body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        background-color: white; /* White background for the rest of the screen */
+      }
+
+      #root {
+        max-width: 375px; /* Typical mobile width */
+        width: 100%;
+        height: 100vh; /* Full height of the viewport */
+        background-color: white; /* Background for the mobile view */
+        /* overflow-x: hidden; */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow to emphasize mobile look */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -15,6 +15,7 @@ const Signin = () => {
         </div>
 
         <form className="sign-in-form">
+        <div className="divider"></div>
           <h2>Sign in/Sign up</h2>
           <label htmlFor="mobile-number">Enter mobile number</label>
           <input

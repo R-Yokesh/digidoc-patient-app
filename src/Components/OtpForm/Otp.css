@@ -1,0 +1,106 @@
+/* Container for the entire OTP page */
+.otp-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(179.96deg, #FFFFFF 0.03%, #FBB03B 187.34%);
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+.logo-section-otp {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.logo {
+  width: 131px;
+  height: auto; 
+  opacity: 1; 
+  margin: 0;
+}
+
+/* Main container for OTP section */
+.otp-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  background-color: white;
+  /* padding: 20px; */
+  border-radius: 35px 35px 0 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 20px; /* Slight margin for spacing from logo */
+}
+
+/* Divider styling */
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: black;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* Input box container */
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;  /* Reduced gap for better alignment */
+  padding: 20px 0;
+}
+
+.input-container input {
+  width: 30px;  /* Increased width for better visibility */
+  height: 30px; /* Increased height */
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Resend OTP text styling */
+.resend-otp {
+  text-align: center;
+  /* padding-top: 10px; */
+}
+
+.resend-otp a {
+  text-decoration: none;
+  color: #ff9900;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Button container */
+.btn {
+  padding: 30px 0; /* Reduced padding to save vertical space */
+  text-align: center;
+}
+
+/* Verify button styling */
+.button-verify {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  background-color: #FFA500;
+  border: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-verify:hover {
+  background-color: #ff9900;
+}
+
+.button-verify:active {
+  transform: scale(0.95);
+}
