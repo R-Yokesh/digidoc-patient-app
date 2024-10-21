@@ -1,0 +1,73 @@
+.upload-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .doctor-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+  }
+  
+  .prescribed-medicines-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .medicine-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .medicine-list li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .medicine-upload {
+    margin-bottom: 20px;
+  }
+  
+  .upload-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .camera-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .next-button {
+    background-color: #FFA726;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .next-button:hover {
+    background-color: #FB8C00;
+  }
+  
