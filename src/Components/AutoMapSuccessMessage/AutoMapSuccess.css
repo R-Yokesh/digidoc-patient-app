@@ -6,33 +6,36 @@
     text-align: center;   
     background-color: white;
     padding: 10px;          
-  }
-  
-  .success-image {
-    width: 150px;            /* Adjust image size */
-  }
-  
-  .success-content {
+    min-height: 100vh; /* Ensure it takes up full viewport height */
+    overflow: hidden;   /* Prevent scrolling */
+}
+
+.success-image {
+    width: 150px; /* Adjust image size */
+}
+
+.success-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;     /* Adds space between the text and the button */
-  }
-  
-  .success-text {
+    margin-bottom: 20px; /* Adds space between the text and the button */
+}
+
+.success-text {
     font-size: 15px; 
     color: black;
-  }
-  
-  .success-message {
+}
+
+.success-message {
     font-size: 15px;
     color: #333;
-  }
-  
-  .button-automap {
+}
+
+.button-automap {
     text-align: center;
-  }
-  .button-home {
+}
+
+.button-home {
     width: 300px;
     max-width: 400px;      
     height: 50px;         
@@ -48,13 +51,17 @@
     justify-content: center;
     align-items: center; 
     font-weight: 700;
-  }
-  
-  .button-home:hover {
+}
+
+.button-home:hover {
     background-color: #ff9900; 
-  }
-  
-  .button-home:active {
+}
+
+.button-home:active {
     transform: scale(0.95); 
-  }
-  
+}
+
+/* Optional: Prevent body from scrolling */
+body {
+    overflow: hidden; 
+}
