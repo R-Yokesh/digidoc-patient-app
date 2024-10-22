@@ -95,3 +95,63 @@
 .next-button:hover {
   background-color: #FB8C00;
 }
+
+/* Full-screen container for the camera screen */
+.camera-screen-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  background-color: white;
+}
+
+/* Header styling for the camera screen */
+.camera-header {
+  background-color: #FFA726;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  color: black;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* Camera image area */
+.camera-image-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer buttons for the camera interface */
+.camera-footer {
+  padding: 10px 20px 10px 20px;;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eeee;
+  border-top: 1px solid #ddd;
+}
+
+/* Center camera button */
+.camera-capture-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #FFA726;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Footer icon styling */
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
