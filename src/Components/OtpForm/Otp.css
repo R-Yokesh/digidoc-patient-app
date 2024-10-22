@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center; /* Center content vertically */
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   background: linear-gradient(179.96deg, #FFFFFF 0.03%, #FBB03B 187.34%);
   padding: 0; 
   box-sizing: border-box;

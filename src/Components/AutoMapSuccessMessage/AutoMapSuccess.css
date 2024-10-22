@@ -1,0 +1,60 @@
+.success-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;   
+    text-align: center;   
+    background-color: white;
+    padding: 10px;          
+  }
+  
+  .success-image {
+    width: 150px;            /* Adjust image size */
+  }
+  
+  .success-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;     /* Adds space between the text and the button */
+  }
+  
+  .success-text {
+    font-size: 15px; 
+    color: black;
+  }
+  
+  .success-message {
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .button-automap {
+    text-align: center;
+  }
+  .button-home {
+    width: 300px;
+    max-width: 400px;      
+    height: 50px;         
+    padding: 0;    
+    background-color: #FFA500; 
+    border: none;         
+    color: black;         
+    font-size: 16px;       
+    border-radius: 5px;  
+    cursor: pointer;      
+    transition: background-color 0.3s ease; 
+    display: flex;        
+    justify-content: center;
+    align-items: center; 
+    font-weight: 700;
+  }
+  
+  .button-home:hover {
+    background-color: #ff9900; 
+  }
+  
+  .button-home:active {
+    transform: scale(0.95); 
+  }
+  
