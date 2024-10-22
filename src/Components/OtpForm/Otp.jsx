@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DigiDocImage from '../../Assets/Images/DigiDoc Head.png';  // Check paths
 import SplashImage from '../../Assets/Images/Online Doctor-amico.png';  // Check paths
 import './Otp.css';
 
 const Otp = () => {
   const [otp, setOtp] = useState(new Array(6).fill(''));  // 6-digit OTP
+  const navigate = useNavigate();
 
   const handleChange = (element, index) => {
     // Allow only numbers
@@ -13,10 +15,15 @@ const Otp = () => {
     // Update OTP state
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
 
-    // Move focus to next input after current input is filled
+    
     if (element.nextSibling) {
       element.nextSibling.focus();
     }
+  };
+
+  const handleVerify = () => {
+   
+    navigate('/welcome'); 
   };
 
   return (
@@ -53,7 +60,7 @@ const Otp = () => {
           <small>Didn't receive OTP? <a href="#">Resend</a></small>
         </div>
 
-        <div className="btn">
+        <div className="btn" onClick={handleVerify}>
           <button className="button-verify">Verify</button>
         </div>
       </div>
