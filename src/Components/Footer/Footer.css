@@ -1,0 +1,29 @@
+.icons-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .menu-item span {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .menu-item.active {
+    color: orange;
+  }
+  
+  .menu-item.active i {
+    color: orange;
+  }
+  
