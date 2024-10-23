@@ -1,12 +1,18 @@
 import React from "react";
-import "../../Assets/Css/ConfirmUpload.css"
+import { useNavigate } from "react-router-dom";  // Import useNavigate
+import "../../Assets/Css/ConfirmUpload.css";
 import backIcon from "../../Assets/Images/Expand_left.png";
 import Med1 from "../../Assets/Images/Med1.png";
 import Med2 from "../../Assets/Images/Med2.png";
 import Med3 from "../../Assets/Images/Med3.png";
 
-
 const ConfirmUpload = () => {
+  const navigate = useNavigate();  // Initialize the useNavigate hook
+
+  const handleNextClick = () => {
+    navigate("/mapping");  // Navigate to /mapping when button is clicked
+  };
+
   return (
     <div className="capp-container">
       <div className="cupload-container">
@@ -63,7 +69,7 @@ const ConfirmUpload = () => {
           </div>
         </div>
 
-        <button className="cnext-button">Next</button>
+        <button className="cnext-button" onClick={handleNextClick}>Next</button>
       </div>
     </div>
   );
