@@ -19,7 +19,7 @@
   width: 131px;
   height: auto; 
   opacity: 1; 
-  margin: 0;
+  /* margin: 0; */
 }
 
 /* Main container for OTP section */
@@ -32,7 +32,6 @@
   border-radius: 35px 35px 0 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-top: 20px; /* Slight margin for spacing from logo */
 }
 
 /* Divider styling */
@@ -79,7 +78,7 @@
 
 /* Button container */
 .btn {
-  padding: 30px 0; /* Reduced padding to save vertical space */
+  padding: 20px 0; /* Reduced padding to save vertical space */
   text-align: center;
 }
 

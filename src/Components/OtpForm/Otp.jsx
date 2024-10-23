@@ -15,27 +15,27 @@ const Otp = () => {
     // Update OTP state
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
 
-    
+
     if (element.nextSibling) {
       element.nextSibling.focus();
     }
   };
 
   const handleVerify = () => {
-   
-    navigate('/welcome'); 
+
+    navigate('/welcome');
   };
 
   return (
     <div className="otp-page">
-      <div className="logo-container-otp">
-        <header className="logo-section-otp">
+      {/* <div className="logo-container-otp"> */}
+        <header className="logo-section">
           <img src={DigiDocImage} alt="DigiDoc" className="logo" />
         </header>
         <div className="illustration-section-otp">
           <img src={SplashImage} alt="Doctor Illustration" className="illustration" />
         </div>
-      </div>
+      {/* </div> */}
 
       <div className="otp-container">
         <div className="divider"></div>
@@ -60,7 +60,7 @@ const Otp = () => {
           <small>Didn't receive OTP? <a href="#">Resend</a></small>
         </div>
 
-        <div className="btn" onClick={handleVerify}>
+        <div className="btn margins" onClick={handleVerify}>
           <button className="button-verify">Verify</button>
         </div>
       </div>

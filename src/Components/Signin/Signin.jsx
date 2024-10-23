@@ -14,10 +14,10 @@ const Signin = () => {
 
   return (
     <div className="form-container">
-      <div className="logo-container">
-        <header className="logo-section">
-          <img src={DigiDocImage} alt="DigiDoc" className="logo" />
-        </header>
+      {/* <div className="logo-container"> */}
+      <header className="logo-section">
+        <img src={DigiDocImage} alt="DigiDoc" className="logo" />
+      </header>
         <div className="illustration-section">
           <img src={SplashImage} alt="Doctor Illustration" className="illustration" />
         </div>
@@ -34,7 +34,7 @@ const Signin = () => {
           <button type="submit">Continue</button>
         </form>
       </div>
-      </div>
+      // </div>
 
   )
 }
