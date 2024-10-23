@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom"; 
 import '../../Assets/Css/Upload.css'; 
 import backIcon from '../../Assets/Images/Expand_left.png';
 import camIcon from '../../Assets/Images/CameraIcon.png';
-import galleryIcon from '../../Assets/Images/galleryIcon.png'; // Gallery icon for footer
-import checkIcon from '../../Assets/Images/checkIcon.png'; // Check icon for footer
+import galleryIcon from '../../Assets/Images/GalleryIcon.png'; // Gallery icon for footer
+import checkIcon from '../../Assets/Images/CheckIcon.png'; // Check icon for footer
 import tabImg from '../../Assets/Images/TabletImg.png'
 
 const Upload = () => {
+
+  const navigate = useNavigate(); 
+
+  const handleNextClick = () => {
+    navigate('/confirm-upload'); 
+  };
   const [showCamera, setShowCamera] = useState(false); // State to toggle camera view
 
   // Function to toggle to camera view
@@ -40,7 +47,7 @@ const Upload = () => {
             <div className="camera-capture-button">
               <span></span> {/* Placeholder for camera button */}
             </div>
-            <img src={checkIcon} alt="Check" className="footer-icon" />
+            <img src={checkIcon} onClick={handleNextClick} alt="Check" className="footer-icon" />
           </div>
         </div>
       ) : (
@@ -87,7 +94,7 @@ const Upload = () => {
             </div>
           </div>
 
-          <button className="next-button">Next</button>
+          <button className="next-button" onClick={handleNextClick} >Next</button>
         </div>
       )}
     </div>

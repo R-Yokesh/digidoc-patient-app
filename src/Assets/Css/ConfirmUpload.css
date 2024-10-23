@@ -1,13 +1,13 @@
-.upload-container {
+.cupload-container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Avenir LT Std', sans-serif;
+  font-family: "Avenir LT Std", sans-serif;
   text-align: left;
 }
 
 /* Style for the back button */
-.back-button {
+.cback-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -18,39 +18,38 @@
 }
 
 /* Doctor's name styling */
-.doctor-name {
+.cdoctor-name {
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0 10px;
 }
 
 /* Heading for the prescribed medicines section */
-.prescribed-medicines-heading {
+.cprescribed-medicines-heading {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
 /* Styling for the medicine list */
-.medicine-list {
+.cmedicine-list {
   list-style: disc;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   margin-bottom: 20px;
 }
 
 /* Each medicine item in the list */
-.medicine-list li {
+.cmedicine-list li {
   font-size: 16px;
   margin-bottom: 5px;
 }
 
 /* Container for the medicine upload section */
-.medicine-upload {
+.cmedicine-upload {
   margin-bottom: 20px;
 }
 
-
 /* Upload input styling, with the span and button aligned horizontally */
-.upload-input {
+.cupload-input {
   margin-top: 3%;
   display: flex;
   justify-content: space-evenly;
@@ -62,7 +61,7 @@
 }
 
 /* Camera button styling */
-.camera-button {
+.ccamera-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -72,15 +71,15 @@
 }
 
 /* Styling for the icons */
-.icon-image {
-  width: 17px;  
+.cicon-image {
+  width: 17px;
   height: 17px;
 }
 
 /* Next button styling */
-.next-button {
+.cnext-button {
   margin-top: 20%;
-  background-color: #FFA726;
+  background-color: #ffa726;
   border: none;
   color: white;
   font-size: 18px;
@@ -91,66 +90,49 @@
 }
 
 /* Hover effect for the next button */
-.next-button:hover {
-  background-color: #FB8C00;
+.cnext-button:hover {
+  background-color: #fb8c00;
 }
 
-/* Full-screen container for the camera screen */
-.camera-screen-container {
-  width: 100%;
-  height: 100vh;
+.cmedicine-list {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  background-color: white;
+  gap: 1rem;
 }
 
-/* Header styling for the camera screen */
-.camera-header {
-  background-color: #FFA726;
-  padding: 10px;
+.cmedicine-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.cmedicine-info {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
-  color: black;
-  font-size: 16px;
-  font-weight: 900;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-/* Camera image area */
-.camera-image-area {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Footer buttons for the camera interface */
-.camera-footer {
-  padding: 10px 20px 10px 20px;;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #eeee;
-  border-top: 1px solid #ddd;
-}
-
-/* Center camera button */
-.camera-capture-button {
+.cmedicine-image {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background-color: #FFA726;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  object-fit: cover;
+  /* border-radius: 0.5rem; */
 }
 
-/* Footer icon styling */
-.footer-icon {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
+.cmedicine-info span {
+  font-size: 0.9rem;
+  color: black;
 }
 
+.cdelete-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.cdelete-button:hover {
+  color: black;
+}

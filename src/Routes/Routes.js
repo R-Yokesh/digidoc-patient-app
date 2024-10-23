@@ -4,8 +4,11 @@ import Signinview from "../Views/SigninView";
 import FirstWelcomeView from "../Views/FirstWelcomeView";
 import OtpView from "../Views/OtpView"
 import UploadView from "../Views/UploadView";
+import ConfirmUploadView from "../Views/ConfirmUploadView";
 import MappingScreen from "../Views/MappingScreenView";
 import AutoMapSuccess from "../Views/AutoMapSuccessView"
+import Header from "../Views/HeaderView"
+import Footer from "../Views/FooterView"
 
 const RoutesData = [
   { path: "/", element: LangView, name: "Language Page" },    
@@ -13,8 +16,11 @@ const RoutesData = [
   { path: "/otp", element: OtpView, name: "Sign In Page" },
   { path: "/welcome", element: FirstWelcomeView, name: "Welcome Page" },
   { path: "/upload", element: UploadView, name: "Upload Page" },
+  { path: "/confirm-upload", element: ConfirmUploadView, name: "Upload Page" },
   { path: "/mapping", element: MappingScreen, name: "Mapping Page" },
   { path: "/success", element: AutoMapSuccess, name: "Mapping Page" },
+  { path: "/header", element: Header, name: "Mapping Page" },
+  { path: "/footer", element: Footer, name: "Mapping Page" },
 
 ];
 
