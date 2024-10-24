@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: white;
 }
 
@@ -16,6 +16,10 @@
 .logo {
     display: flex;
     align-items: center;
+    width: 131px;
+    height: auto; 
+    opacity: 1; 
+    margin: 0;
 }
 
 .logo img {

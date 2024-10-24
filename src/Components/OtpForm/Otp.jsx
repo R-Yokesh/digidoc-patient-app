@@ -30,7 +30,7 @@ const Otp = () => {
     <div className="otp-page">
       {/* <div className="logo-container-otp"> */}
         <header className="logo-section">
-          <img src={DigiDocImage} alt="DigiDoc" className="logo" />
+          <img src={DigiDocImage} alt="DigiDoc" className="logos" />
         </header>
         <div className="illustration-section-otp">
           <img src={SplashImage} alt="Doctor Illustration" className="illustration" />
