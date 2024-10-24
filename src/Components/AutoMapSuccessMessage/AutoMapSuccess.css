@@ -7,7 +7,7 @@
     background-color: white;
     padding: 10px;          
     min-height: 100vh; /* Ensure it takes up full viewport height */
-    overflow: hidden;   /* Prevent scrolling */
+    overflow: hidden;  
 }
 
 .success-image {
@@ -61,7 +61,7 @@
     transform: scale(0.95); 
 }
 
-/* Optional: Prevent body from scrolling */
-body {
+
+/* body {
     overflow: hidden; 
-}
+} */
