@@ -1,0 +1,209 @@
+/* General container styling */
+.hmap-medicine-container {
+  /* margin-top: 30px; */
+  /* padding: 20px; */
+  background-color: #f1f1f1;
+  font-family: "Avenir LT Std", sans-serif;
+  /* min-height: 100vh; */
+}
+
+.map-medicine-container {
+  font-family: "Avenir LT Std", sans-serif;
+  padding: 15px;
+  background-color: #f1f1f1;
+  /* min-height: 100vh; */
+}
+
+.header {
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.header h1 {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+/* Medicine List Container */
+.mmedicine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Medicine Name Styling (above the medicine-item div) */
+.medicine-name {
+  font-family: "Avenir LT Std", sans-serif;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Individual Medicine Item */
+.medicine-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Medicine Image */
+.medicine-image {
+  width: 60px;
+  height: 60px;
+  /* border-radius: 10px; */
+  object-fit: cover;
+}
+
+/* Select Button Styling */
+.select-button {
+  padding: 10px 45px;
+  font-family: "Avenir LT Std", sans-serif;
+  font-size: 14px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  /* background-color: #fff; */
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.select-button:focus {
+  outline: none;
+  border-color: #888;
+}
+
+/* Save Button Styling */
+.save-button {
+  /* display: block; */
+  width: 100%;
+  margin-top: 7rem;
+  padding: 10px;
+  font-family: "Avenir LT Std", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: Black;
+  background-color: #b7b7b7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.save-button:hover {
+  background-color: #777;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup content styling */
+.popup-content {
+  position: relative; /* Make this the positioning reference */
+  background-color: white;
+  padding: 20px; /* Increase padding for a better layout */
+  border-radius: 10px;
+  width: 250px; /* Increase the width slightly if necessary */
+  text-align: center;
+}
+
+.pop-heading {
+  color: #fbb03b;
+  /* padding: 10px; */
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.medicine-popup-image {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.popup-select {
+  padding: 10px;
+  padding: 10px 45px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #000;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.popup-select option {
+  padding: 10px; /* Padding inside the dropdown options */
+  font-family: "Avenir LT Std", sans-serif;
+  font-size: 14px;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-select.hidden {
+  opacity: 0; /* Hidden dropdown */
+}
+
+.popup-save-button {
+  width: 100%;
+  padding: 10px;
+  font-family: "Avenir LT Std", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #f4a300;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.popup-save-button:hover {
+  background-color: #e69900;
+}
+
+.close-popup {
+  background: none;
+  border: none;
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #333; /* Make sure the button has a visible color */
+  font-weight: bold; /* Optional: make the 'X' bold for better visibility */
+}
