@@ -10,6 +10,7 @@ import AutoMapSuccess from "../Views/AutoMapSuccessView"
 import Header from "../Views/HeaderView"
 import Footer from "../Views/FooterView"
 import MapMedicineView from "../Views/MapMedicineView";
+import HomePage from "../Views/HomePageView"
 
 const RoutesData = [
   { path: "/", element: LangView, name: "Language Page" },    
@@ -23,6 +24,7 @@ const RoutesData = [
   { path: "/success", element: AutoMapSuccess, name: "Mapping Page" },
   { path: "/header", element: Header, name: "Mapping Page" },
   { path: "/footer", element: Footer, name: "Mapping Page" },
+  { path: "/home", element: HomePage, name: "Mapping Page" },
 
 ];
 
