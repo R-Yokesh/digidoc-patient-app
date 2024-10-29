@@ -1,16 +1,19 @@
-.header {
+/* Header styles */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is within width */
     background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect for header */
 }
 
-.menu-icon {
+.menu-icon, .notification-icon {
     width: 24px;
     height: 24px;
     cursor: pointer;
-
 }
 
 .logo {
@@ -18,7 +21,6 @@
     align-items: center;
     width: 131px;
     height: auto; 
-    opacity: 1; 
     margin: 0;
 }
 
@@ -34,8 +36,53 @@
     color: #333;
 }
 
-.notification-icon {
+/* Slide-out menu */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.slide-menu.open {
+    left: 0; /* Slide in from the left */
+}
+
+/* Close icon for the slide menu */
+.close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     width: 24px;
     height: 24px;
     cursor: pointer;
+    font-size: 24px;
+    color: black;
+}
+
+.slide-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.slide-menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.slide-menu ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.slide-menu ul li a:hover {
+    background-color: #444;
+    color: white;
 }

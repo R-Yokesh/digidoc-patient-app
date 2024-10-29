@@ -1,0 +1,80 @@
+.reminder-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f9f9f9; */
+    /* padding: 20px; */
+    border-radius: 10px;
+    margin: 20px auto;
+  }
+  
+  .reminder-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .reminder-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .reminder-icon img {
+    width: 70px; /* Adjust the size of the image */
+    height: 70px; /* Ensure consistent height */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  
+  .reminder-text h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #FBB03B;
+    text-align: center; /* Center the text */
+  }
+  
+  .reminder-text p {
+    margin: 5px 0 15px;
+    font-size: 14px;
+    color: black;
+    text-align: center; /* Center the text */
+  }
+  
+  .reminder-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .reminder-buttons button {
+    background-color: #FBB03B;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .close-button:hover {
+    color: #555;
+  }
+  
