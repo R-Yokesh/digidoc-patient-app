@@ -11,6 +11,9 @@ import Header from "../Views/HeaderView"
 import Footer from "../Views/FooterView"
 import MapMedicineView from "../Views/MapMedicineView";
 import HomePage from "../Views/HomePageView"
+import DailyRegimenView from "../Views/DailyRegimenView";
+import MyTestView from "../Views/MyTestView";
+import AddTestView from "../Views/AddTestView";
 
 const RoutesData = [
   { path: "/", element: LangView, name: "Language Page" },    
@@ -21,10 +24,17 @@ const RoutesData = [
   { path: "/confirm-upload", element: ConfirmUploadView, name: "Upload Page" },
   { path: "/mapping", element: MappingScreen, name: "Mapping Page" },
   { path: "/map-medicine", element: MapMedicineView, name: "Map Medicine Page" },
+  { path: "/daily-regimen", element: DailyRegimenView, name: "Daily Regimen Page" },
   { path: "/success", element: AutoMapSuccess, name: "Mapping Page" },
   { path: "/header", element: Header, name: "Mapping Page" },
   { path: "/footer", element: Footer, name: "Mapping Page" },
   { path: "/home", element: HomePage, name: "Mapping Page" },
+
+
+  { path: "/mytest", element: MyTestView, name: "MyTest Page" },
+  { path: "/add-test", element: AddTestView, name: "MyTest Page" },
+
+
 
 ];
 
