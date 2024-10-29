@@ -1,0 +1,152 @@
+.reminder-container {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  height: 100vh;
+}
+
+.sub-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.title-mytest {
+  flex-grow: 1;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.mytest-button-group {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 1rem;
+}
+
+.add-button,
+.view-log-button {
+  background-color: #fbb03b;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-family: "Avenir LT STD", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.reminder-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.reminder-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.reminder1-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  /* margin-bottom: 20px; */
+}
+
+.reminder-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+}
+
+.reminder-content {
+  flex-grow: 1;
+}
+
+.reminder-content h2 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.reminder-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.reminder-info img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.alarm-clock-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.toggle-on,
+.toggle-off {
+  padding: 5px 10px 5px 10px;
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.toggle-on {
+  text-align: center;
+  width: 20px;
+  background-color: #27c383;
+  color: #fff;
+  border-radius: 16px;
+}
+
+.toggle-off {
+  padding: 5px 10px 5px 5px;
+  text-align: center;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 16px;
+}
