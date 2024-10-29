@@ -19,7 +19,7 @@ import Remainder from '../Views/RemainderView'
 import TestNotTaken from "../Views/TestNotTakenView";
 import TimeSet from "../Views/TimeSetView";
 import PopUpForTest from "../Views/PopUpForTestView"
-
+ 
 const RoutesData = [
   { path: "/", element: LangView, name: "Language Page" },    
   { path: "/signin", element: Signinview, name: "Sign In Page" },
@@ -39,13 +39,15 @@ const RoutesData = [
   { path: "/testnottaken", element: TestNotTaken, name: "Mapping Page" },
   { path: "/timeset", element: TimeSet, name: "Mapping Page" },
   { path: "/popup", element: PopUpForTest, name: "Mapping Page" },
-
-
+ 
+ 
   { path: "/mytest", element: MyTestView, name: "MyTest Page" },
   { path: "/add-test", element: AddTestView, name: "MyTest Page" },
-
-
-
+ 
+ 
+ 
 ];
-
+ 
 export default RoutesData;
+ 
+ 
