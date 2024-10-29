@@ -14,6 +14,11 @@ import HomePage from "../Views/HomePageView"
 import DailyRegimenView from "../Views/DailyRegimenView";
 import MyTestView from "../Views/MyTestView";
 import AddTestView from "../Views/AddTestView";
+import Remainder from '../Views/RemainderView'
+// import TestResult from "../Views/TestResultFormView";
+import TestNotTaken from "../Views/TestNotTakenView";
+import TimeSet from "../Views/TimeSetView";
+import PopUpForTest from "../Views/PopUpForTestView"
 
 const RoutesData = [
   { path: "/", element: LangView, name: "Language Page" },    
@@ -29,6 +34,11 @@ const RoutesData = [
   { path: "/header", element: Header, name: "Mapping Page" },
   { path: "/footer", element: Footer, name: "Mapping Page" },
   { path: "/home", element: HomePage, name: "Mapping Page" },
+  { path: "/remainder", element: Remainder, name: "Mapping Page" },
+  // { path: "/testresult", element: TestResult, name: "Mapping Page" },
+  { path: "/testnottaken", element: TestNotTaken, name: "Mapping Page" },
+  { path: "/timeset", element: TimeSet, name: "Mapping Page" },
+  { path: "/popup", element: PopUpForTest, name: "Mapping Page" },
 
 
   { path: "/mytest", element: MyTestView, name: "MyTest Page" },
