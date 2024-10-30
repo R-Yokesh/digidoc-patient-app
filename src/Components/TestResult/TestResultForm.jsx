@@ -85,7 +85,7 @@ function TestResultForm() {
                 </div>
 
                 <div className="input-group">
-                    <label className="label">Result</label>
+                    <label className="labels">Result</label>
                     <div className="result-input-group">
                         <input
                             type="text"
@@ -99,7 +99,7 @@ function TestResultForm() {
                 </div>
 
                 <div className="input-group">
-                    <label className="label">Note</label>
+                    <label className="labels">Note</label>
                     <textarea
                         value={note}
                         onChange={handleNoteChange}
