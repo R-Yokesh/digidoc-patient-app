@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../Assets/Css/DailyRegimen.css';
-
+import { useNavigate } from 'react-router-dom';
 // Importing necessary SVGs and images
 import SunIcon from '../../Assets/Images/SVG/Sunrise.svg';
 import AfternoonIcon from '../../Assets/Images/SVG/Sun.svg';
@@ -13,6 +13,7 @@ import DiagIcon from '../../Assets/Images/SVG/laboratory.svg';
 import CalendarIcon from '../../Assets/Images/SVG/Calendar.svg';
 
 const DailyRegimen = () => {
+  const navigate = useNavigate();
   const [medicineChecks, setMedicineChecks] = useState({
     paracetamol: { morning: false, afternoon: false, night: false },
     amlodipine: { morning: false, afternoon: false, night: false },
@@ -30,6 +31,10 @@ const DailyRegimen = () => {
     }));
   };
 
+  const handleMainSave = () => {
+    // Navigate to another page, for example '/confirmation'
+    navigate('/home');
+  };
   return (
     <div className="daily-regimen-container">
       <header className="drheader">
@@ -154,7 +159,7 @@ const DailyRegimen = () => {
         </div>
       </section>
 
-      <button className="home-button">Home</button>
+      <button className="home-button" onClick={handleMainSave}>Home</button>
     </div>
   );
 };

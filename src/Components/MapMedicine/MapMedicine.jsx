@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../Assets/Css/MapMedicine.css';
 import backIcon from "../../Assets/Images/Expand_left.png";
 import Med1 from "../../Assets/Images/Med1.png";
@@ -7,6 +8,7 @@ import Med3 from "../../Assets/Images/Med3.png";
 
 const MapMedicine = () => {
   // Sample medicine data
+  const navigate = useNavigate();
   const medicines = [
     { id: 1, name: "Medicine 1", image: Med1 },
     { id: 2, name: "Medicine 2", image: Med2 },
@@ -32,6 +34,10 @@ const MapMedicine = () => {
       [selectedMedicine.id]: currentMedicineName
     }));
     setPopupOpen(false);
+  };
+  const handleMainSave = () => {
+    // Navigate to another page, for example '/confirmation'
+    navigate('/daily-regimen');
   };
 
   return (
@@ -61,7 +67,7 @@ const MapMedicine = () => {
         </div>
 
         {/* Save Button */}
-        <button className="save-button">Save</button>
+        <button className="save-button" onClick={handleMainSave}>Save</button>
       </div>
 
       {/* Popup for selecting medicine */}
