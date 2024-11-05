@@ -154,7 +154,7 @@ const DailyRegimen = () => {
         <div className="diagnostic-item">
           <span className="diagnostic-name">Glucose Profile</span>
           <div className="calendar-container">
-            <img src={CalendarIcon} alt="Calendar" className="calendar-icon" />
+            <img src={CalendarIcon} alt="Calendar" className="drcalendar-icon" />
           </div>
         </div>
       </section>

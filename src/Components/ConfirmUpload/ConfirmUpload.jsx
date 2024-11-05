@@ -1,22 +1,32 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";  // Import useNavigate
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../../Assets/Css/ConfirmUpload.css";
 import backIcon from "../../Assets/Images/Expand_left.png";
-import Med1 from "../../Assets/Images/Med1.png";
-import Med2 from "../../Assets/Images/Med2.png";
-import Med3 from "../../Assets/Images/Med3.png";
 
 const ConfirmUpload = () => {
-  const navigate = useNavigate();  // Initialize the useNavigate hook
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Access the passed state
+  const initialImages = location.state?.images ?? [];
+  
+  // Set local state for images
+  const [images, setImages] = useState(initialImages);
+
+  const handleDeleteClick = (index) => {
+    // Create a new array without the deleted image
+    const updatedImages = images.filter((_, imgIndex) => imgIndex !== index);
+    setImages(updatedImages);
+  };
 
   const handleNextClick = () => {
-    navigate("/mapping");  // Navigate to /mapping when button is clicked
+    navigate("/mapping");
   };
 
   return (
     <div className="capp-container">
       <div className="cupload-container">
-        <button className="cback-button">
+        <button className="cback-button" onClick={() => navigate(-1)}>
           <img src={backIcon} alt="Back" className="cicon-image" />
         </button>
 
@@ -29,44 +39,16 @@ const ConfirmUpload = () => {
         </ul>
 
         <div className="cmedicine-list">
-          <div className="cmedicine-item">
-            <label>Medicine 1</label>
-            <div className="cmedicine-info">
-              <img
-                src={Med1}
-                alt="Medicine 1"
-                className="cmedicine-image"
-              />
-              <span>Table.jpg</span>
-              <button className="cdelete-button">×</button>
+          {images.map((image, index) => (
+            <div key={index} className="cmedicine-item">
+              <label>Medicine {index + 1}</label>
+              <div className="cmedicine-info">
+                <img src={image} alt={`Medicine ${index + 1}`} className="cmedicine-image" />
+                <span>Captured Image</span>
+                <button className="cdelete-button" onClick={() => handleDeleteClick(index)}>×</button>
+              </div>
             </div>
-          </div>
-
-          <div className="cmedicine-item">
-            <label>Medicine 2</label>
-            <div className="cmedicine-info">
-              <img
-                src={Med2}
-                alt="Medicine 2"
-                className="cmedicine-image"
-              />
-              <span>Table.jpg</span>
-              <button className="cdelete-button">×</button>
-            </div>
-          </div>
-
-          <div className="cmedicine-item">
-            <label>Medicine 3</label>
-            <div className="cmedicine-info">
-              <img
-                src={Med3}
-                alt="Medicine 3"
-                className="cmedicine-image"
-              />
-              <span>Table.jpg</span>
-              <button className="cdelete-button">×</button>
-            </div>
-          </div>
+          ))}
         </div>
 
         <button className="cnext-button" onClick={handleNextClick}>Next</button>

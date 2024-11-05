@@ -1,16 +1,41 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import '../../Assets/Css/Language.css';
 import DigiDocImage from '../../Assets/Images/DigiDoc Head.png';
 import SplashImage from '../../Assets/Images/Online Doctor-amico.png';
+import config from '../../Config';
 
 const Language = () => {
   const [selectedLang, setSelectedLang] = useState(null);
-  const navigate = useNavigate(); // Initialize navigate
-
-  const handleLanguageSelect = (language) => {
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  
+  const handleLanguageSelect = async (language) => {
     setSelectedLang(language);
-    navigate('/signin');
+    
+    const languageCode = language === 'English' ? '1' : '2';
+    
+    try {
+      const response = await fetch(`${config.API_BASE_URL}/patient/language`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          language: languageCode,
+          patient_id: "20" // Replace with actual patient ID if needed
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to update language");
+      }
+
+      navigate('/signin');
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+      console.error(err);
+    }
   };
 
   return (
@@ -38,8 +63,9 @@ const Language = () => {
             தமிழ்
           </button>
         </div>
-        </div>
+        {error && <p className="error-message">{error}</p>}
       </div>
+    </div>
   );
 };
 
