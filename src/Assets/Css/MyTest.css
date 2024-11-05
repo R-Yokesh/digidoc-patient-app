@@ -1,4 +1,4 @@
-.reminder-container {
+.treminder-container {
   background-color: #f1f1f1;
   padding: 1rem;
   height: 100vh;
@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 
-.reminder-card {
+.treminder-card {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -57,14 +57,14 @@
   margin-bottom: 1rem;
 }
 
-.reminder-row {
+.treminder-row {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 20px;
 }
 
-.reminder1-row {
+.treminder1-row {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -72,23 +72,23 @@
   /* margin-bottom: 20px; */
 }
 
-.reminder-icon {
+.treminder-icon {
   width: 60px;
   height: 60px;
   margin-right: 1rem;
 }
 
-.reminder-content {
+.treminder-content {
   flex-grow: 1;
 }
 
-.reminder-content h2 {
+.treminder-content h2 {
   font-size: 16px;
   margin: 0;
   font-weight: bold;
 }
 
-.reminder-info {
+.treminder-info {
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -96,7 +96,7 @@
   margin-top: 5px;
 }
 
-.reminder-info img {
+.treminder-info img {
   width: 16px;
   height: 16px;
   margin-right: 5px;

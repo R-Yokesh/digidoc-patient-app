@@ -2,20 +2,17 @@
   font-family: "Avenir LT STD", sans-serif;
   padding: 20px;
   background-color: #f5f5f5;
-  /* border-radius: 8px; */
 }
 
 .addtest-header {
   display: flex;
   background-color: #ffffff;
   align-items: center;
-  /* margin-bottom: 20px; */
   padding: 10px;
 }
 
 .addtest-header h1 {
   flex-grow: 1;
-  /* text-align: center; */
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -94,7 +91,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin: 16px 0;
+  margin: 20px 0;
 }
 
 .time-card {
@@ -105,7 +102,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.time-card.selected {
+  border-color: #fbb03b;
 }
 
 .time-label {
@@ -114,20 +117,51 @@
   gap: 6px;
 }
 
+.time-label input[type="checkbox"] {
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.time-label input[type="checkbox"]:checked {
+  background-color: #fbb03b;
+}
+
 .time-icon img {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
+}
+
+.alarm-icon {
+  width: 20px;
+  height: 20px;
+  transition: filter 0.3s;
+}
+
+.alarm-icon.selected {
+  color: #fbb03b;
+  filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(1000%)
+    hue-rotate(-5deg) brightness(90%) contrast(100%);
 }
 
 .time-details {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .duration-group {
-  margin-top: 16px;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  align-content: center;
+  gap: 10px;
 }
 
 .duration-toggle {
@@ -135,44 +169,113 @@
   background-color: #e0e0e0;
   border-radius: 16px;
   overflow: hidden;
+  width: 40%;
+  font-size: 12px;
 }
 
 .duration-option {
   flex: 1;
   text-align: center;
-  padding: 5px 0;
   cursor: pointer;
-  color: #000;
-  background-color: #e0e0e0;
+  padding: 6px 0;
 }
 
 .duration-option.active {
+  border-radius: 16px;
   background-color: #fbb03b;
-  color: #fff;
+  color: #000;
 }
 
 .action-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  margin-top: 10%;
 }
 
-.cancel-btn,
-.save-btn {
-  padding: 10px 24px;
-  font-size: 14px;
+.test-cancel-btn,
+.test-save-btn {
+  width: 40%;
+  padding: 8px 16px;
   border-radius: 5px;
+  font-family: 'Avenir LT STD', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.cancel-btn {
-  background-color: white;
-  border: 1px solid #333;
+.test-cancel-btn {
+  background-color: #e0e0e0;
   color: #333;
 }
 
-.save-btn {
-  background-color: #fbb03b;
+.test-save-btn {
   border: none;
+  background-color: #fbb03b;
   color: white;
 }
+
+
+.custom-duration-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust as needed */
+  margin-top: 15px;
+}
+
+.custom-duration-container label {
+  font-size: 14px;
+}
+ 
+.custom-column {
+  width: 40%; /* Ensures columns have the same width */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row {
+  margin-bottom: 15px; /* Space between rows */
+}
+
+.custom-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5px; /* Space between label and input */
+}
+
+.date-input {
+  position: relative;
+  width: 100%;
+}
+
+.date-input input {
+  padding-right: 35px; /* Adds space for the calendar icon */
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.select-input {
+  position: relative;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+
+
