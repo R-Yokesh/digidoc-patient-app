@@ -213,3 +213,69 @@
   background-color: #fbb03b;
   color: white;
 }
+
+
+.custom-duration-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust as needed */
+  margin-top: 15px;
+}
+
+.custom-duration-container label {
+  font-size: 14px;
+}
+ 
+.custom-column {
+  width: 40%; /* Ensures columns have the same width */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row {
+  margin-bottom: 15px; /* Space between rows */
+}
+
+.custom-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5px; /* Space between label and input */
+}
+
+.date-input {
+  position: relative;
+  width: 100%;
+}
+
+.date-input input {
+  padding-right: 35px; /* Adds space for the calendar icon */
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.select-input {
+  position: relative;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+
+

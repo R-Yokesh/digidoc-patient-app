@@ -8,12 +8,17 @@ import AfternoonIcon from "../../Assets/Images/SVG/SunGrey.svg";
 import EveningIcon from "../../Assets/Images/SVG/CloudGrey.svg";
 import NightIcon from "../../Assets/Images/SVG/MoonGrey.svg";
 import AlarmIcon from "../../Assets/Images/SVG/AlarmGrey.svg";
+import CalendarIcon from "../../Assets/Images/Custom-Calendar.png";
 
 const AddTest = () => {
   const [testName, setTestName] = useState("");
   const [instruction, setInstruction] = useState("");
   const [selectedTimes, setSelectedTimes] = useState([]);
   const [duration, setDuration] = useState("Daily");
+  const [startDate, setStartDate] = useState("");
+  const [lastDate, setLastDate] = useState("");
+
+  const [numberOfDays, setNumberOfDays] = useState("");
 
   const handleTimeSelect = (time) => {
     if (selectedTimes.includes(time)) {
@@ -50,7 +55,11 @@ const AddTest = () => {
               style={{ fontFamily: "Avenir LT STD" }}
             />
             <img src={SearchIcon} alt="search icon" className="search-icon" />
-            <img src={DropdownIcon} alt="dropdown icon" className="dropdown-icon" />
+            <img
+              src={DropdownIcon}
+              alt="dropdown icon"
+              className="dropdown-icon"
+            />
           </div>
         </div>
 
@@ -85,7 +94,9 @@ const AddTest = () => {
           ].map(({ label, time, icon }) => (
             <div
               key={label}
-              className={`time-card ${selectedTimes.includes(label) ? "selected" : ""}`}
+              className={`time-card ${
+                selectedTimes.includes(label) ? "selected" : ""
+              }`}
             >
               <div className="time-label">
                 <input
@@ -103,7 +114,9 @@ const AddTest = () => {
                 <img
                   src={AlarmIcon}
                   alt="alarm icon"
-                  className={`alarm-icon ${selectedTimes.includes(label) ? "selected" : ""}`}
+                  className={`alarm-icon ${
+                    selectedTimes.includes(label) ? "selected" : ""
+                  }`}
                 />
                 <span className="time">{time}</span>
               </div>
@@ -116,19 +129,74 @@ const AddTest = () => {
           <label>Duration</label>
           <div className="duration-toggle">
             <span
-              className={`duration-option ${duration === "Daily" ? "active" : ""}`}
+              className={`duration-option ${
+                duration === "Daily" ? "active" : ""
+              }`}
               onClick={() => handleDurationToggle("Daily")}
             >
               Daily
             </span>
             <span
-              className={`duration-option ${duration === "Custom" ? "active" : ""}`}
+              className={`duration-option ${
+                duration === "Custom" ? "active" : ""
+              }`}
               onClick={() => handleDurationToggle("Custom")}
             >
               Custom
             </span>
           </div>
         </div>
+
+        {duration === "Custom" && (
+          <div className="custom-duration-container">
+            {/* First Column: Start Date and Last Date */}
+            <div className="custom-column">
+              <div className="input-row">
+                <label>
+                  Start Date<span>*</span>
+                </label>
+                <div className="select-input">
+                  <input
+                    type="text"
+                    placeholder="Select Date"
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value)}
+                    className="custom-input"
+                  />
+                  <img
+                    src={CalendarIcon}
+                    alt="calendar icon"
+                    className="calendar-icon"
+                  />
+                </div>
+              </div>
+              <div className="input-row">
+                <label style={{ fontSize: "14px" }}>Last Date</label>
+                <input
+                  type="text"
+                  placeholder="Last Date"
+                  className="custom-input"
+                  value={lastDate}
+                  onChange={(e) => setLastDate(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* Second Column: Number of Days */}
+            <div className="custom-column">
+              <div className="input-row">
+                <label style={{ fontSize: "14px" }}>Number of Days</label>
+                <input
+                  type="number"
+                  placeholder="00"
+                  value={numberOfDays}
+                  onChange={(e) => setNumberOfDays(e.target.value)}
+                  className="custom-input"
+                />
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Action Buttons */}
         <div className="action-buttons">
