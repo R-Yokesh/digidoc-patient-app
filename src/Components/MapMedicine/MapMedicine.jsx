@@ -35,7 +35,7 @@ const MapMedicine = () => {
     }));
     setPopupOpen(false);
   };
-  const handleMainSave = () => {
+  const handleMainnavigate = () => {
     // Navigate to another page, for example '/confirmation'
     navigate('/daily-regimen');
   };
@@ -67,7 +67,7 @@ const MapMedicine = () => {
         </div>
 
         {/* Save Button */}
-        <button className="save-button" onClick={handleMainSave}>Save</button>
+        <button className="save-button" onClick={handleMainnavigate}>Save</button>
       </div>
 
       {/* Popup for selecting medicine */}

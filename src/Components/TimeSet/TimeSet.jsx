@@ -46,7 +46,7 @@ const TimeSet = ({ onClose }) => {
         </div>
 
         {/* Separator */}
-        <span className="separator">:</span>
+        <span className="separators">:</span>
 
         {/* Minutes Column */}
         <div className="time-column">
