@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import './TestResultForm.css';
 import MedicinePill from "../../Assets/Images/medicinepill.png";
 import camIcon from '../../Assets/Images/CameraIcon.png';
@@ -6,16 +6,18 @@ import DeleteIcon from '../../Assets/Images/DeleteIcon.png';
 import TestResultSuccess from '../TestResultSuccess/TestResultSuccess';
 import backIcon from '../../Assets/Images/Expand_left.png';
 import galleryIcon from '../../Assets/Images/GalleryIcon.png';
-import tabImg from '../../Assets/Images/TabletImg.png'
 import checkIcon from '../../Assets/Images/CheckIcon.png';
 
 function TestResultForm() {
-    const [file, setFile] = useState(null);
+    const [files, setFiles] = useState([]); // State to hold multiple image files
     const [result, setResult] = useState("");
     const [note, setNote] = useState("");
     const [formVisible, setFormVisible] = useState(true);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [showCamera, setShowCamera] = useState(false); // State for camera view
+    const [showCamera, setShowCamera] = useState(false);
+    const [previewImage, setPreviewImage] = useState(null);
+    const videoRef = useRef(null);
+    const canvasRef = useRef(null);
 
     const handleResultChange = (e) => {
         setResult(e.target.value);
@@ -28,7 +30,7 @@ function TestResultForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({
-            file,
+            files,
             result,
             note,
         });
@@ -39,18 +41,57 @@ function TestResultForm() {
         setFormVisible(false);
     };
 
+    // Function to start the camera stream
+    const startCamera = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            videoRef.current.srcObject = stream;
+        } catch (error) {
+            console.error("Error accessing the camera: ", error);
+        }
+    };
+
+    // Function to stop the camera stream
+    const stopCamera = () => {
+        const stream = videoRef.current?.srcObject;
+        if (stream) {
+            const tracks = stream.getTracks();
+            tracks.forEach((track) => track.stop());
+            videoRef.current.srcObject = null;
+        }
+        setShowCamera(false);
+        setPreviewImage(null);
+    };
+
+    // Function to capture an image from the video stream
+    const handleCaptureClick = () => {
+        const context = canvasRef.current.getContext("2d");
+        context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
+        const imageDataURL = canvasRef.current.toDataURL("image/png");
+        setPreviewImage(imageDataURL);
+    };
+
     const handleCameraClick = () => {
-        setShowCamera(true); // Show camera view
+        setShowCamera(true);
+        startCamera();
     };
 
     const handleBackClick = () => {
-        setShowCamera(false); // Go back to form
+        stopCamera();
     };
 
-    const handleNextClick = () => {
-        // Handle logic when the check icon is clicked (e.g., save photo)
-        setShowCamera(false);
+    const handleConfirmClick = () => {
+        if (previewImage) {
+            setFiles((prevFiles) => [...prevFiles, previewImage]);
+            stopCamera();
+        }
     };
+
+    useEffect(() => {
+        return () => {
+            stopCamera(); // Stop camera when component unmounts
+        };
+    }, []);
 
     if (isSubmitted) {
         return <TestResultSuccess />;
@@ -68,16 +109,26 @@ function TestResultForm() {
                     </div>
 
                     <div className="camera-image-area">
-                        {/* You can replace this image with a live video feed */}
-                        <img src={tabImg} alt="Medicine" style={{ width: '100%' }} />
+                        {previewImage ? (
+                            <img src={previewImage} alt="Captured Preview" style={{ width: '100%' }} />
+                        ) : (
+                            <video ref={videoRef} autoPlay style={{ width: '100%' }}></video>
+                        )}
+                        <canvas ref={canvasRef} style={{ display: 'none' }} width="640" height="480"></canvas>
                     </div>
 
                     <div className="camera-footer">
                         <img src={galleryIcon} alt="Gallery" className="footer-icon" />
-                        <div className="camera-capture-button">
+                        <div className="camera-capture-button" onClick={handleCaptureClick}>
                             <span></span> {/* Placeholder for camera button */}
                         </div>
-                        <img src={checkIcon} onClick={handleNextClick} alt="Check" className="footer-icon" />
+                        <img
+                            src={checkIcon}
+                            onClick={handleConfirmClick}
+                            alt="Check"
+                            className="footer-icon"
+                            style={{ opacity: previewImage ? 1 : 0.5 }} // Enable only if preview is available
+                        />
                     </div>
                 </div>
             ) : (
@@ -107,10 +158,15 @@ function TestResultForm() {
 
                         <div className="medicine-upload">
                             <div className="upload-inputs">
-                                <span>Upload Test Photo</span>
+                                <span>Upload Test Photos</span>
                                 <button type="button" className="camera-button" onClick={handleCameraClick}>
                                     <img src={camIcon} alt="Camera" className="icon-image" />
                                 </button>
+                            </div>
+                            <div className="uploaded-images">
+                                {files.map((file, index) => (
+                                    <img key={index} src={file} alt={`Captured ${index + 1}`} style={{ width: '50px', height: '50px', margin: '5px' }} />
+                                ))}
                             </div>
                             <div className="message">
                                 <p className="message-font">Accepted files: pdf & jpg</p>
