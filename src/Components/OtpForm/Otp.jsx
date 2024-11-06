@@ -97,7 +97,7 @@ const Otp = () => {
           <small>Didn't receive OTP? <a href="#" onClick={handleResend}>Resend</a></small>
         </div>
 
-        <div className="btn margins" onClick={handleVerify}>
+        <div className="otp-btn margins" onClick={handleVerify}>
           <button className="button-verify">Verify</button>
         </div>
       </div>

@@ -78,7 +78,7 @@
 }
 
 /* Button container */
-.btn {
+.otp-btn {
   padding: 10px 0; /* Reduced padding to save vertical space */
   text-align: center;
 }
