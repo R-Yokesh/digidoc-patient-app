@@ -1,5 +1,7 @@
+// AddTest.jsx
 import React, { useState } from "react";
 import "../../Assets/Css/AddTest.css";
+import TimeSelector from "../../Components/TimeSelector/TimeSelector"; 
 import backIcon from "../../Assets/Images/Expand_left.png";
 import SearchIcon from "../../Assets/Images/SVG/Search.svg";
 import DropdownIcon from "../../Assets/Images/SVG/Dropdown.svg";
@@ -19,6 +21,7 @@ const AddTest = () => {
   const [startDate, setStartDate] = useState("");
   const [lastDate, setLastDate] = useState("");
   const [numberOfDays, setNumberOfDays] = useState("");
+  const [showTimeSelector, setShowTimeSelector] = useState(false);
 
   const handleTimeSelect = (time) => {
     if (selectedTimes.includes(time)) {
@@ -40,6 +43,7 @@ const AddTest = () => {
         </button>
         <h1>My Test</h1>
       </div>
+
       <div className="add-test-container">
         {/* Test Name Input */}
         <div className="form-group">
@@ -116,16 +120,25 @@ const AddTest = () => {
                 <img src={icon} alt={`${label} icon`} />
               </div>
               <div className="time-details">
+                {/* Open popup on clicking the alarm icon */}
                 <img
                   src={AlarmIcon}
                   alt="alarm icon"
                   className={`alarm-icon ${selectedTimes.includes(label) ? "selected" : ""}`}
+                  onClick={() => setShowTimeSelector(true)}
                 />
                 <span className="time">{time}</span>
               </div>
             </div>
           ))}
         </div>
+
+        {/* TimeSelector Popup */}
+        {showTimeSelector && (
+          <div className="time-selector-overlay">
+            <TimeSelector onCancel={() => setShowTimeSelector(false)} />
+          </div>
+        )}
 
         {/* Duration Toggle */}
         <div className="duration-group">

@@ -241,7 +241,7 @@
 .test-save-btn {
   border: none;
   background-color: #fbb03b;
-  color: white;
+  color: #000;
 }
 
 
@@ -330,6 +330,26 @@
   width: 13px;
   pointer-events: none;
 }
+
+
+
+.add-mytest-container {
+  position: relative;
+}
+
+.time-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: -10px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.8); /* Deep background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
 
 
 

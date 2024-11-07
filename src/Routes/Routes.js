@@ -19,6 +19,7 @@ import Remainder from '../Views/RemainderView'
 import TestNotTaken from "../Views/TestNotTakenView";
 import TimeSet from "../Views/TimeSetView";
 import PopUpForTest from "../Views/PopUpForTestView"
+import TestSuccesView from "../Views/TestSuccesView";
  
 const RoutesData = [
   { path: "/", element: LangView, name: "Language Page" },    
@@ -43,6 +44,9 @@ const RoutesData = [
  
   { path: "/mytest", element: MyTestView, name: "MyTest Page" },
   { path: "/add-test", element: AddTestView, name: "MyTest Page" },
+  { path: "/test-success", element: TestSuccesView, name: "MyTest Page" },
+
+
  
  
  

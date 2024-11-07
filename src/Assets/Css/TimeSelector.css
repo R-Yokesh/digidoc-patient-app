@@ -1,0 +1,81 @@
+.timeSelector-container {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Avenir LT STD', sans-serif;
+  }
+  
+  .timeSelector-title {
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+    text-align: left;
+  }
+  
+  .timeSelector-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .timeSelector-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px; /* Adjust height to fit 3 items */
+    overflow: hidden;
+  }
+  
+  .timeSelector-item {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    height: 40px; /* Match height for each row */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .timeSelector-active {
+    color: #FBB03B;
+  }
+
+  
+  .timeSelector-separator {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .timeSelector-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  
+  .timeSelector-cancelBtn,
+  .timeSelector-setBtn {
+    width: 40%;
+    padding: 10px 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Avenir LT STD', sans-serif;
+  }
+  
+  .timeSelector-cancelBtn {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .timeSelector-setBtn {
+    background-color: #FBB03B;
+    color: #000;
+    border: none;
+  }
+  
