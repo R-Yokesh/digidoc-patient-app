@@ -1,7 +1,7 @@
 // AddTest.jsx
 import React, { useState } from "react";
 import "../../Assets/Css/AddTest.css";
-import TimeSelector from "../../Components/TimeSelector/TimeSelector"; 
+import TimeSelector from "../../Components/TimeSelector/TimeSelector";
 import backIcon from "../../Assets/Images/Expand_left.png";
 import SearchIcon from "../../Assets/Images/SVG/Search.svg";
 import DropdownIcon from "../../Assets/Images/SVG/Dropdown.svg";
@@ -17,22 +17,42 @@ const AddTest = () => {
   const [instruction, setInstruction] = useState("");
   const [otherInstruction, setOtherInstruction] = useState("");
   const [selectedTimes, setSelectedTimes] = useState([]);
+  const [customTimes, setCustomTimes] = useState({
+    Morning: "09:30 AM",
+    Afternoon: "12:30 PM",
+    Evening: "05:30 PM",
+    Night: "09:30 PM",
+  });
   const [duration, setDuration] = useState("Daily");
   const [startDate, setStartDate] = useState("");
   const [lastDate, setLastDate] = useState("");
   const [numberOfDays, setNumberOfDays] = useState("");
   const [showTimeSelector, setShowTimeSelector] = useState(false);
+  const [currentLabel, setCurrentLabel] = useState("");
 
-  const handleTimeSelect = (time) => {
-    if (selectedTimes.includes(time)) {
-      setSelectedTimes(selectedTimes.filter((t) => t !== time));
+  const handleTimeSelect = (label) => {
+    if (selectedTimes.includes(label)) {
+      setSelectedTimes(selectedTimes.filter((t) => t !== label));
     } else {
-      setSelectedTimes([...selectedTimes, time]);
+      setSelectedTimes([...selectedTimes, label]);
     }
   };
 
   const handleDurationToggle = (selected) => {
     setDuration(selected);
+  };
+
+  const openTimeSelector = (label) => {
+    setCurrentLabel(label);
+    setShowTimeSelector(true);
+  };
+
+  const handleTimeSet = (hour, minute, period) => {
+    const formattedTime = `${hour.toString().padStart(2, "0")}:${minute
+      .toString()
+      .padStart(2, "0")} ${period}`;
+    setCustomTimes((prevTimes) => ({ ...prevTimes, [currentLabel]: formattedTime }));
+    setShowTimeSelector(false);
   };
 
   return (
@@ -82,8 +102,6 @@ const AddTest = () => {
               </label>
             ))}
           </div>
-
-          {/* Conditionally render input box when "Others" is selected */}
           {instruction === "Others" && (
             <input
               type="text"
@@ -98,11 +116,11 @@ const AddTest = () => {
         {/* Time Options */}
         <div className="time-options">
           {[
-            { label: "Morning", time: "09:30 AM", icon: MorningIcon },
-            { label: "Afternoon", time: "12:30 PM", icon: AfternoonIcon },
-            { label: "Evening", time: "05:30 PM", icon: EveningIcon },
-            { label: "Night", time: "09:30 PM", icon: NightIcon },
-          ].map(({ label, time, icon }) => (
+            { label: "Morning", icon: MorningIcon },
+            { label: "Afternoon", icon: AfternoonIcon },
+            { label: "Evening", icon: EveningIcon },
+            { label: "Night", icon: NightIcon },
+          ].map(({ label, icon }) => (
             <div
               key={label}
               className={`time-card ${selectedTimes.includes(label) ? "selected" : ""}`}
@@ -120,15 +138,23 @@ const AddTest = () => {
                 <img src={icon} alt={`${label} icon`} />
               </div>
               <div className="time-details">
-                {/* Open popup on clicking the alarm icon */}
                 <img
                   src={AlarmIcon}
                   alt="alarm icon"
                   className={`alarm-icon ${selectedTimes.includes(label) ? "selected" : ""}`}
-                  onClick={() => setShowTimeSelector(true)}
+                  onClick={() => openTimeSelector(label)}
                 />
-                <span className="time">{time}</span>
+                <span className="time">{customTimes[label]}</span>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Display Selected Times as Reminders */}
+        <div className="reminder-display">
+          {selectedTimes.map((time) => (
+            <div key={time} className="reminder-text">
+              {`${time} Reminder ${customTimes[time]}`}
             </div>
           ))}
         </div>
@@ -136,7 +162,7 @@ const AddTest = () => {
         {/* TimeSelector Popup */}
         {showTimeSelector && (
           <div className="time-selector-overlay">
-            <TimeSelector onCancel={() => setShowTimeSelector(false)} />
+            <TimeSelector onTimeSet={handleTimeSet} onCancel={() => setShowTimeSelector(false)} />
           </div>
         )}
 
@@ -145,13 +171,17 @@ const AddTest = () => {
           <label>Duration</label>
           <div className="duration-toggle">
             <span
-              className={`duration-option ${duration === "Daily" ? "active" : ""}`}
+              className={`duration-option ${
+                duration === "Daily" ? "active" : ""
+              }`}
               onClick={() => handleDurationToggle("Daily")}
             >
               Daily
             </span>
             <span
-              className={`duration-option ${duration === "Custom" ? "active" : ""}`}
+              className={`duration-option ${
+                duration === "Custom" ? "active" : ""
+              }`}
               onClick={() => handleDurationToggle("Custom")}
             >
               Custom
@@ -175,7 +205,11 @@ const AddTest = () => {
                     onChange={(e) => setStartDate(e.target.value)}
                     className="custom-input"
                   />
-                  <img src={CalendarIcon} alt="calendar icon" className="calendar-icon" />
+                  <img
+                    src={CalendarIcon}
+                    alt="calendar icon"
+                    className="calendar-icon"
+                  />
                 </div>
               </div>
 

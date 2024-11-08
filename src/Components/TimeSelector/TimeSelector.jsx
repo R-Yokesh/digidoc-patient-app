@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../Assets/Css/TimeSelector.css';
 
-const TimeSelector = ({ onCancel }) => {
+const TimeSelector = ({ onCancel, onTimeSet }) => {
   const [selectedHour, setSelectedHour] = useState(8);
   const [selectedMinute, setSelectedMinute] = useState(0);
   const [selectedPeriod, setSelectedPeriod] = useState("AM");
@@ -12,6 +12,10 @@ const TimeSelector = ({ onCancel }) => {
 
   const getNextValue = (current, range) => (current + 1) % range;
   const getPrevValue = (current, range) => (current - 1 + range) % range;
+
+  const handleSetTime = () => {
+    onTimeSet(selectedHour, selectedMinute, selectedPeriod);
+  };
 
   const handleScroll = (type, direction) => {
     if (type === "hour") {
@@ -53,8 +57,8 @@ const TimeSelector = ({ onCancel }) => {
       </div>
 
       <div className="timeSelector-buttons">
-        <button onClick={onCancel} className="timeSelector-cancelBtn">Cancel</button>
-        <button className="timeSelector-setBtn">Set</button>
+        <button className="timeSelector-setBtn" onClick={handleSetTime}>Set</button>
+        <button className="timeSelector-cancelBtn" onClick={onCancel}>Cancel</button>
       </div>
     </div>
   );
