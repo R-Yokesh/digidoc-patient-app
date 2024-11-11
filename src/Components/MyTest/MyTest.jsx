@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "../../Assets/Css/MyTest.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -11,6 +12,14 @@ import bloodPressureIcon from "../../Assets/Images/BloodPressureIcon.png";
 import bloodSugarIcon from "../../Assets/Images/BloodSugar.png";
 
 const MyTest = () => {
+
+
+  const navigate = useNavigate();
+
+  const handleViewLogClick = () => {
+    navigate('/test-log');
+  };
+
   return (
     <div>
       <Header />
@@ -22,9 +31,11 @@ const MyTest = () => {
           <h1 className="title-mytest">My Tests</h1>
         </div>
 
-        <div className="mytest-button-group">
+         <div className="mytest-button-group">
           <button className="add-button">+ Add</button>
-          <button className="view-log-button">View Log</button>
+          <button className="view-log-button" onClick={handleViewLogClick}>
+            View Log
+          </button>
         </div>
 
         {/* Reminder Card for Blood Pressure */}

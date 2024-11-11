@@ -1,0 +1,210 @@
+.test-log-container {
+    background-color: #F1F1F1;
+  }
+  
+  .test-log {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .testlog-header {
+    display: flex;
+    background-color: #FBB03B;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .testlog-header h1 {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+  }
+  
+  .testlog-back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .log-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .filter-button {
+    display: flex;
+    align-items: center;
+    background: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Avenir LT STD', sans-serif;
+    font-size: 12px;
+  }
+  
+  .filter-button img {
+    width: 20px;
+    margin-right: 5px;
+  }
+  
+  .logdropdown-icon {
+    width: 12px;
+    height: auto;
+    margin-left: 5px;
+  }
+  
+  .test-log-content {
+    margin-top: 20px;
+  }
+  
+  .log-section {
+    margin-bottom: 20px;
+  }
+  
+  .log-section h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .log-entry {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .log-entry img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .entry-details h3 {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .entry-details p {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+  }
+  
+  .entry-value {
+    margin-left: auto;
+    color: #333;
+    font-family: 'Avenir LT STD', sans-serif;
+    font-size: 12px;
+  }
+  
+  .photo-icon {
+    width: 25px !important;
+    height: auto !important;
+  }
+  
+
+
+  .filter-container {
+    width: 280px;
+    position: fixed;
+    bottom: 0;
+    /* left: 0; */
+    /* right: 0; */
+    background: #f1f1f1;
+    padding: 20px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+  }
+  
+  .slide-up {
+    transform: translateY(0);
+  }
+  
+  .slide-down {
+    transform: translateY(100%);
+  }
+  
+  .filter-container h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+
+  .filter-select, .filter-date {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter-date {
+    padding: 15px 10px;
+  }
+
+  .filter-select img {
+    width:35px;
+    height: auto;
+  }
+
+
+  .testlog-lbl {
+    font-size: 14px;
+  }
+
+  
+  .filter-select select, .filter-date input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+  }
+  
+  .filter-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+  }
+  
+  .clear-button {
+    width: 40%;
+    font-family: 'Avenir LT STD', sans-serif;
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .apply-button {
+    width: 40%;
+    font-family: 'Avenir LT STD', sans-serif;
+    font-size: 14px;
+    background-color: #FBB03B;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
